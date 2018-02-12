@@ -38,13 +38,10 @@ command
 		pubkey: pubkey
 	})
 	.then(response => {
-		command
+		return command
 			.changeLoadBalancerInstanceConfiguration(LOADBALANCER_INSTANCE_NUMBER)
 			.then(response => {
 				console.log('changed');
-			})
-			.catch(error => {
-				console.error(error.message);
 			});
 	})
 	.catch(error => {
